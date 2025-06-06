@@ -1,7 +1,1 @@
-services:
-  - type: cron
-    name: maiia-rdv-check
-    schedule: "*/15 * * * *" # toutes les 15 min
-    env: python
-    buildCommand: ""
-    startCommand: python main.py
+
