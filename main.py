@@ -55,6 +55,11 @@ try:
         envoyer_alerte("🎉 Un créneau est disponible pour une première consultation chez la Dre Baron Thurotte !")
     else:
         print("Aucun créneau.")
+        
+except Exception as e:
+    with open("page_dump.html", "w", encoding="utf-8") as f:
+        f.write(driver.page_source)
+    raise e
 
 finally:
     driver.quit()
