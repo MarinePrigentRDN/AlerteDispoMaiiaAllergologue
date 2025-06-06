@@ -26,15 +26,15 @@ driver = webdriver.Chrome(options=options)
 try:
     url = "https://www.maiia.com/allergologue/44150-ancenis/baron-thurotte-aurelie/rdv"
     driver.get(url)
-    time.sleep(5)
+    time.sleep(10)
 
-    motif_btn = driver.find_element(By.XPATH, '//button[contains(text(), "Motif de consultation")]')
+    motif_btn = driver.find_element(By.XPATH, '//button[contains(text(), "motif de consultation")]')
     motif_btn.click()
     time.sleep(1)
 
     motif = driver.find_element(By.XPATH, '//span[contains(text(), "Première consultation enfant")]')
     motif.click()
-    time.sleep(3)
+    time.sleep(10)
 
     if "RDV en ligne indisponible" not in driver.page_source:
         envoyer_alerte("🎉 Un créneau est disponible pour une première consultation chez la Dre Baron Thurotte !")
