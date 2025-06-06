@@ -40,10 +40,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: debug-files
-        path: |
+          path: |
             page_dump.html
             page_debug.png
-
 
       - name: Upload debug HTML
         uses: actions/upload-artifact@v4
