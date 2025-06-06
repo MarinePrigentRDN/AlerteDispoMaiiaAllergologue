@@ -18,9 +18,8 @@ def envoyer_alerte(message):
     url = f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage'
     requests.post(url, data={'chat_id': CHAT_ID, 'text': message})
 
-# Configuration Selenium Headless
+# Configuration Selenium (mode visible, sans headless)
 options = Options()
-options.add_argument('--headless')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 
