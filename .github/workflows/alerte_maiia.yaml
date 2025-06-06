@@ -36,12 +36,14 @@ jobs:
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: python main.py
 
-      - name: Upload debug HTML
-        if: failure()
+      - name: Upload debug fichiers
         uses: actions/upload-artifact@v4
         with:
-          name: page-dump
-          path: page_dump.html
+          name: debug-files
+        path: |
+            page_dump.html
+            page_debug.png
+
 
       - name: Upload debug HTML
         uses: actions/upload-artifact@v4
