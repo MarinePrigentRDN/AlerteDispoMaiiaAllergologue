@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 import time
 import requests
 
-# Test
+# Test workflow
 
 # Configuration Telegram
 TELEGRAM_TOKEN = '7274166974:AAGnCgtxUIqqTFNlsSPSjmqp41NBX89gyNk'
