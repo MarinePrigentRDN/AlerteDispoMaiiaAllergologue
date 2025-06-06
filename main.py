@@ -37,7 +37,7 @@ try:
     # Attente et clic sur le bouton "Motif de consultation" (insensible à la casse)
     motif_btn = wait.until(EC.element_to_be_clickable((
         By.XPATH,
-        '//button[contains(translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), "motif de consultation")]'
+        '//button[contains(translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), "Motif de consultation")]'
     )))
     motif_btn.click()
 
