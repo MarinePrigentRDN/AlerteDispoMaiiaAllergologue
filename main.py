@@ -55,7 +55,10 @@ try:
     # ✅ Sélectionner "Première consultation enfant"
     motif = driver.find_element(By.XPATH, '//span[contains(text(), "Première consultation enfant")]')
     motif.click()
-    time.sleep(10)
+    wait.until(
+        EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "MuiAlert-root") or contains(text(), "indisponible")]'))
+    )
+
 
     if "RDV en ligne indisponible" not in driver.page_source:
         envoyer_alerte("🎉 Un créneau est disponible pour une première consultation chez la Dre Baron Thurotte !")
