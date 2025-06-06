@@ -25,7 +25,6 @@ options.add_argument('--disable-dev-shm-usage')
 options.add_argument('--disable-gpu')
 options.add_argument('--disable-extensions')
 options.add_argument('--remote-debugging-port=9222')
-options.add_argument('--user-data-dir=/tmp/selenium')  # <- empêche le conflit de profil
 
 driver = webdriver.Chrome(options=options)
 
