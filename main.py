@@ -18,10 +18,14 @@ def envoyer_alerte(message):
     url = f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage'
     requests.post(url, data={'chat_id': CHAT_ID, 'text': message})
 
-# Configuration Selenium (mode visible, sans headless)
+# Configuration Selenium sans headless + profil temporaire
 options = Options()
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
+options.add_argument('--disable-gpu')
+options.add_argument('--disable-extensions')
+options.add_argument('--remote-debugging-port=9222')
+options.add_argument('--user-data-dir=/tmp/selenium')  # <- empêche le conflit de profil
 
 driver = webdriver.Chrome(options=options)
 
