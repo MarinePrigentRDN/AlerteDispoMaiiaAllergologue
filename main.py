@@ -18,13 +18,13 @@ def envoyer_alerte(message):
     url = f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage'
     requests.post(url, data={'chat_id': CHAT_ID, 'text': message})
 
-# Configuration Selenium sans headless + profil temporaire
+# Configuration Selenium sans headless + propre pour GitHub Actions
 options = Options()
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 options.add_argument('--disable-gpu')
 options.add_argument('--disable-extensions')
-options.add_argument('--remote-debugging-port=9222')
+# Ne pas ajouter --remote-debugging-port, ni --user-data-dir
 
 driver = webdriver.Chrome(options=options)
 
