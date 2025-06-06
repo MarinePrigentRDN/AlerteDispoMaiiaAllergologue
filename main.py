@@ -63,7 +63,8 @@ try:
         print("Aucun créneau.")
 
 except Exception as e:
-    # 🧪 Dump de la page pour debug
+    print("⚠️ Une erreur est survenue :", e)
+    driver.save_screenshot("page_debug.png")
     with open("page_dump.html", "w", encoding="utf-8") as f:
         f.write(driver.page_source)
     raise e
